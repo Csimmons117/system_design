@@ -90,8 +90,10 @@ nav ul li{
 
 /* Style for each image item */
 .image-item {
+    flex: 1 1 60%;
     width: 200px; /* Fixed width for each image */
-    height: 200px; /* Fixed height for each image */
+    height: 200%; /* Fixed height for each image */
+    max-width: 30%;
 }
 
 /* Styling for images */
@@ -165,7 +167,7 @@ nav ul li{
 
 /* Optional: You can also style the lists or the job listing section */
 #section4 ul {
-    list-style-type: none; /* Removes the default list bullets */
+    /*list-style-type: none;  Removes the default list bullets */
     padding-left: 0;
 }
 
@@ -199,6 +201,79 @@ nav ul li{
 .image-item:hover img {
     transform: scale(1.1); /* Makes the image "pop out" by scaling it */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Adds a shadow to give it a floating effect */
+}
+
+
+
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the calendar container */
+.calendar {
+    width: 100%;
+    max-width: 500px; /* Limit the calendar width */
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Header styles (Month name) */
+.calendar-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Grid layout for the days of the week */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+    grid-template-rows: repeat(6, 1fr); /* Up to 6 rows to accommodate all days */
+    grid-gap: 5px;
+    padding: 10px;
+}
+
+/* Styling for the days of the week */
+.calendar-day {
+    font-weight: bold;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Styling for the calendar dates */
+.calendar-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.calendar-date:hover {
+    background-color: #e0e0e0;
+}
+
+/* Empty days (before the start of the month) */
+.calendar-date:nth-child(1),
+.calendar-date:nth-child(2),
+.calendar-date:nth-child(3),
+.calendar-date:nth-child(4) {
+    background-color: transparent;
 }
 
 
@@ -266,26 +341,4 @@ nav ul li{
 }
 
 
-@media(max-width: 1000px) {
-    
-    .container div {
-        font-size: 20px;
-        background-size: cover;
-        background-repeat:no-repeat;
-        background-position: right;
-        
-    }
-    .container nav{
-        font-size: 40px;
-    }
-    
-    .container #dynamic-txt{
-        font-size:60px ;
-    }
-    .container #head2{
-        padding:12px;
-        
-    }
-    /*.para-text{ font-size:20px;}*/
-    /*.container #progress div{font-size:0px;}*/
-}
+
